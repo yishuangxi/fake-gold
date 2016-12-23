@@ -51,12 +51,12 @@ CREATE TABLE `article` (
 
 #评论表
 CREATE TABLE `comment` (
-  `id`            INT(10) UNSIGNED NOT NULL             AUTO_INCREMENT,
-  `content`       VARCHAR(255)     NOT NULL             DEFAULT '',
-  `created_at`    TIMESTAMP        NOT NULL             DEFAULT NOW(),
-  `reply_user_id` INT              NOT NULL, #回复用户id
-  `article_id`    INT              NOT NULL, #评论文章id
-  `user_id`       INT              NOT NULL, #评论人id
+  `id`         INT(10) UNSIGNED NOT NULL             AUTO_INCREMENT,
+  `content`    VARCHAR(255)     NOT NULL             DEFAULT '',
+  `created_at` TIMESTAMP        NOT NULL             DEFAULT NOW(),
+  `reply_to`   INT              NOT NULL, #回复用户id
+  `article_id` INT              NOT NULL, #评论文章id
+  `user_id`    INT              NOT NULL, #评论人id
   PRIMARY KEY (`id`)
 )
   ENGINE = INNODB
